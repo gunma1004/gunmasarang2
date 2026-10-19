@@ -1,0 +1,458 @@
+@charset "utf-8";
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+:root {
+  --primary-navy: #123758;
+  --secondary-navy: #0d2840;
+  --gold-accent: #e2b157;
+  --gold-hover: #caa049;
+  --text-dark: #222222;
+  --text-muted: #666666;
+  --bg-light: #f8fafc;
+  --border-color: #e5e7eb;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+}
+
+body {
+  color: var(--text-dark);
+  background-color: var(--white);
+  line-height: 1.6;
+  padding-bottom: 60px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 8px;
+  z-index: 1000;
+}
+.skip-link:focus { top: 0; }
+
+/* Header */
+.site-header {
+  border-bottom: 1px solid var(--border-color);
+  background: var(--white);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+.brand-text-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-badge {
+  background: var(--primary-navy);
+  color: #fff;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.brand-name {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--primary-navy);
+  letter-spacing: -0.5px;
+}
+
+.header-consult {
+  background-color: var(--gold-accent);
+  color: var(--white);
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 14px;
+}
+.header-consult:hover { background-color: var(--gold-hover); }
+
+/* Hero */
+.home-hero, .directory-head {
+  background: radial-gradient(circle at center, #1b476e 0%, var(--primary-navy) 100%);
+  color: var(--white);
+  text-align: center;
+  padding: 60px 0 50px;
+}
+
+.hero-badge {
+  display: inline-block;
+  background-color: var(--gold-accent);
+  color: var(--primary-navy);
+  font-size: 13px;
+  font-weight: 800;
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.home-hero h1 {
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1.35;
+  margin-bottom: 15px;
+}
+
+.home-hero h1 em {
+  font-style: normal;
+  color: var(--gold-accent);
+}
+
+.home-hero p {
+  color: #cbd5e1;
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 600px;
+  margin: 0 auto 35px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 16px 0;
+}
+
+.hero-stats div {
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  flex-direction: column;
+}
+.hero-stats div:last-child { border-right: none; }
+.hero-stats b { font-size: 22px; color: var(--gold-accent); }
+.hero-stats span { font-size: 12px; color: #94a3b8; }
+
+.gold-button {
+  display: inline-block;
+  background-color: var(--gold-accent);
+  color: var(--primary-navy);
+  font-size: 15px;
+  font-weight: 800;
+  padding: 12px 28px;
+  border-radius: 6px;
+}
+
+/* Tabs */
+.province-tabs {
+  background: var(--white);
+  border-bottom: 1px solid var(--border-color);
+}
+.province-tabs .container { display: flex; }
+.province-tabs a {
+  padding: 15px 25px;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--text-muted);
+}
+.province-tabs a.active, .province-tabs a:hover {
+  color: var(--primary-navy);
+  border-bottom: 3px solid var(--primary-navy);
+}
+
+/* Sections */
+.section { padding: 60px 0; }
+.section.soft { background-color: var(--bg-light); }
+.section-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--primary-navy);
+  margin-bottom: 8px;
+}
+.section-note {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 30px;
+}
+.section-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 30px;
+}
+
+/* 4개 매장 리스트 카드 */
+.provider-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.provider-card {
+  display: flex;
+  background: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 20px;
+  align-items: center;
+  gap: 18px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+}
+.provider-card .rank {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--primary-navy);
+  min-width: 44px;
+  text-align: center;
+}
+.provider-card .rank small { font-size: 12px; }
+.provider-main { flex-grow: 1; }
+.provider-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+.provider-head h3 { font-size: 18px; font-weight: 800; color: #1e293b; }
+.provider-head span { color: #f59e0b; font-size: 14px; font-weight: 700; }
+.provider-main .tags span {
+  background: #f1f5f9;
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-right: 4px;
+  color: #475569;
+}
+.provider-main p { font-size: 13px; color: var(--text-muted); margin: 8px 0; }
+.provider-prices span { font-size: 13px; font-weight: 700; color: var(--primary-navy); }
+
+.provider-phone-btn {
+  background: var(--primary-navy);
+  color: #fff !important;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 800;
+  border-radius: 6px;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.provider-phone-btn small {
+  font-size: 11px;
+  font-weight: normal;
+  color: #94a3b8;
+  margin-top: 2px;
+}
+.provider-phone-btn:hover { background: #16436c; }
+
+/* Course Cards */
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+}
+.course-card {
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 20px 16px;
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+}
+.course-icon { font-size: 28px; margin-bottom: 10px; }
+.course-card h3 { font-size: 17px; font-weight: 800; margin-bottom: 8px; }
+.course-card p {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.45;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+.price-list {
+  border-top: 1px dashed var(--border-color);
+  padding-top: 12px;
+}
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+.price-row span { color: var(--text-muted); }
+.price-row b { color: var(--primary-navy); }
+
+/* Steps */
+.step-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+.step-card {
+  background: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px;
+}
+.step-card b {
+  display: inline-block;
+  background: var(--primary-navy);
+  color: var(--white);
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 26px;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.step-card h3 { font-size: 16px; margin-bottom: 6px; }
+.step-card p { font-size: 13px; color: var(--text-muted); }
+
+/* Region Grid */
+.region-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+.region-link {
+  background: var(--bg-light);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+}
+.region-link b { font-size: 14px; color: var(--primary-navy); }
+.region-link span { font-size: 11px; color: var(--text-muted); }
+.region-link:hover {
+  border-color: var(--primary-navy);
+  background: var(--white);
+}
+
+/* Guide Cards */
+.guide-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.guide-card {
+  background: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px;
+}
+.guide-cover {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--gold-accent);
+  margin-bottom: 8px;
+}
+.guide-card span { font-size: 11px; color: var(--text-muted); }
+.guide-card h3 { font-size: 16px; margin: 6px 0 10px; }
+.guide-card p { font-size: 13px; color: var(--text-muted); }
+
+/* Consult & Footer */
+.consult-card {
+  background: var(--primary-navy);
+  color: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  align-items: center;
+  gap: 20px;
+}
+.consult-card b {
+  color: var(--gold-accent);
+  font-size: 16px;
+  display: block;
+  margin-bottom: 4px;
+}
+.consult-card p { font-size: 13px; color: #cbd5e1; }
+.consult-card a {
+  background: var(--gold-accent);
+  color: var(--primary-navy);
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 800;
+}
+
+.site-footer {
+  background: #0f172a;
+  color: #94a3b8;
+  padding: 50px 0 30px;
+  text-align: center;
+  font-size: 13px;
+}
+.footer-logo-text {
+  font-size: 20px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 15px;
+}
+.site-footer p { margin-bottom: 8px; }
+.site-footer nav { margin: 20px 0; }
+.site-footer nav a { margin: 0 10px; color: #e2e8f0; }
+.site-footer small { color: #64748b; }
+
+/* Floating Call Button */
+.fixed-phone-cta {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background-color: var(--primary-navy);
+  color: var(--white);
+  padding: 12px 22px;
+  border-radius: 30px;
+  font-weight: 800;
+  font-size: 14px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 999;
+}
+.fixed-phone-cta::before { content: "📞"; }
+
+/* 반응형 */
+@media (max-width: 992px) {
+  .course-grid { grid-template-columns: repeat(2, 1fr); }
+  .region-grid { grid-template-columns: repeat(3, 1fr); }
+  .provider-list { grid-template-columns: 1fr; }
+  .consult-card { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .course-grid, .step-grid, .guide-grid { grid-template-columns: 1fr; }
+  .region-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero-stats { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .hero-stats div { border: none; }
+  .provider-card { flex-direction: column; align-items: flex-start; }
+  .provider-phone-btn { width: 100%; }
+}
