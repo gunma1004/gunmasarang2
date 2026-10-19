@@ -100,6 +100,8 @@ def run():
   <meta name="keywords" content="{district_title}출장마사지, {district_title}홈타이, {district_title}출장타이, {district_title}스웨디시">
   <link rel="canonical" href="{canonical_url}">
   <title>{prov_full} {district_title} 출장 케어 마사지 | 추천 업체 비교 - {BRAND_NAME}</title>
+  <meta property="og:title" content="{prov_full} {district_title} 출장 케어 마사지 | 추천 업체 비교 - {BRAND_NAME}">
+  <meta property="og:description" content="{BRAND_NAME} {prov_full} {district_title} 안내. 선입금 없이 현장에서 확인하는 출장마사지·홈타이 코스와 직통 제휴 매장 리스트입니다.">
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body data-page-type="target-district-hub">
